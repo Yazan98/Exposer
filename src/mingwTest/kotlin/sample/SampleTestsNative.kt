@@ -1,5 +1,6 @@
 package sample
 
+import exposer.hello
 import kotlin.test.Test
 import kotlin.test.assertTrue
 

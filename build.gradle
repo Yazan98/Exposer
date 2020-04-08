@@ -57,12 +57,6 @@ android {
 
 kotlin {
     jvm()
-//    js {
-//        browser {
-//        }
-//        nodejs {
-//        }
-//    }
 
     android {
 
@@ -77,19 +71,21 @@ kotlin {
         androidMain {
             dependencies {
                 implementation kotlin('stdlib')
+                implementation kotlin('stdlib-common')
             }
         }
         jvmMain {
             dependencies {
                 implementation kotlin('stdlib-jdk8')
+                implementation kotlin('stdlib-common')
             }
         }
-        jvmTest {
-            dependencies {
-                implementation kotlin('test')
-                implementation kotlin('test-junit')
-            }
-        }
+//        jvmTest {
+//            dependencies {
+//                implementation kotlin('test')
+//                implementation kotlin('test-junit')
+//            }
+//        }
 //        jsMain {
 //            dependencies {
 //                implementation kotlin('stdlib-js')

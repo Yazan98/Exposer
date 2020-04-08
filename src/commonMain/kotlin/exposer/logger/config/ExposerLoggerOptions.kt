@@ -1,0 +1,35 @@
+package exposer.logger.config
+
+import exposer.logger.keys.ExposerLoggerLevel
+import exposer.logger.keys.ExposerLoggerMode
+import exposer.logger.keys.ExposerLoggingStatus
+
+/**
+ * Name : Yazan98
+ * Date : 4/8/2020
+ * Time : 11:54 PM
+ * Project Name : IntelliJ IDEA
+ */
+data class ExposerLoggerOptions(
+    private var globalTag: String = Exposer_DEFAULT_TAG,
+    private var loggingStatus: ExposerLoggingStatus = Exposer_DEFAULT_STATE,
+    private var preMode: ExposerLoggerMode = Exposer_LOGGER_PRE_MODE_DEFAULT,
+    private var postMode: ExposerLoggerMode = Exposer_LOGGER_POST_MODE_DEFAULT,
+    private var defaultLevel: ExposerLoggerLevel = Exposer_DEFAULT_LEVEL
+) : ExposerBaseOptionsInitializer {
+
+    companion object {
+        const val Exposer_DEFAULT_TAG = "Exposer Logger"
+        val Exposer_LOGGER_PRE_MODE_DEFAULT = ExposerLoggerMode.DASH
+        val Exposer_LOGGER_POST_MODE_DEFAULT = ExposerLoggerMode.DASH
+        val Exposer_DEFAULT_STATE = ExposerLoggingStatus.ENABLED
+        val Exposer_DEFAULT_LEVEL = ExposerLoggerLevel.DEBUG
+    }
+
+    override fun getGlobalTag(): String = globalTag
+    override fun getLoggingStatus(): ExposerLoggingStatus = loggingStatus
+    override fun getDefaultPreMode(): ExposerLoggerMode = preMode
+    override fun getDefaultPostMode(): ExposerLoggerMode = postMode
+    override fun getDefaultLevel(): ExposerLoggerLevel = defaultLevel
+
+}
