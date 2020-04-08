@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Exposer-jvm-0.0.1">
+    <output-path>D:\Android Projects\Exposer\build\libs</output-path>
+    <root id="archive" name="Exposer-jvm-0.0.1.jar">
+      <element id="module-output" name="com.example.Exposer.jvmMain" />
+    </root>
+  </artifact>
+</component>
