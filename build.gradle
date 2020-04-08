@@ -24,7 +24,7 @@ repositories {
     mavenCentral()
 }
 
-group 'com.example'
+group 'com.yazan98.domain.exposer'
 version '0.0.1'
 
 android {
@@ -63,6 +63,9 @@ kotlin {
     }
 
     sourceSets {
+        allJvm {
+            dependsOn commonMain
+        }
         commonMain {
             dependencies {
                 implementation kotlin('stdlib-common')

@@ -7,7 +7,7 @@ package exposer.logger.keys
  * Project Name : IntelliJ IDEA
  */
 
-expect enum class ExposerLoggerMode(value: String) {
+enum class ExposerLoggerMode(value: String) {
     DASH("-"),
     SLASH("/"),
     STAR("*"),

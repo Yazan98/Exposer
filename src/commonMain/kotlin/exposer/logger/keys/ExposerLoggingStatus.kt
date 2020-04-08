@@ -7,6 +7,6 @@ package exposer.logger.keys
  * Project Name : IntelliJ IDEA
  */
 
-expect enum class ExposerLoggingStatus {
+enum class ExposerLoggingStatus {
     ENABLED, DISABLED
 }
