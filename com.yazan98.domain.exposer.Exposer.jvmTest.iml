@@ -5,9 +5,9 @@
       <configuration version="3" platform="JVM 1.6" allPlatforms="JVM [1.6]" useProjectSettings="false" isTestModule="true" externalProjectId="Exposer">
         <dependsOnModuleNames>Exposer_commonTest</dependsOnModuleNames>
         <sourceSets>
-          <sourceSet>com.yazan98.domain.exposer.Exposer.commonTest</sourceSet>
           <sourceSet>com.yazan98.domain.exposer.Exposer.jvmMain</sourceSet>
           <sourceSet>com.yazan98.domain.exposer.Exposer.commonMain</sourceSet>
+          <sourceSet>com.yazan98.domain.exposer.Exposer.commonTest</sourceSet>
         </sourceSets>
         <newMppModelJpsModuleKind>COMPILATION_AND_SOURCE_SET_HOLDER</newMppModelJpsModuleKind>
         <externalSystemTestTasks>jvmTest|Exposer:jvmTest|jvm</externalSystemTestTasks>

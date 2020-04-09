@@ -1,5 +1,7 @@
 package exposer.usecases.base
 
+import exposer.usecases.constraints.ExposerConstraint
+
 /**
  * Name : Yazan98
  * Date : 4/9/2020
@@ -23,12 +25,34 @@ interface ExposerBaseUseCase {
      */
     fun destroy()
 
+    /**
+     * Cancel The UseCase At AnyTime
+     * Each UseCase Has execute Method And You Can Execute The Request From This Method
+     * And Any Execute Call Should Executes On The UseCase Job And You Can Cancel The Job Execution at AnyTime
+     */
+    fun cancel()
+
+    /**
+     * Each UseCase Has Constraints In This Method You Can Provide The Constraints
+     * What is Constraint ? ::: Check The ExposerConstraint Comment
+     */
+    fun getSupportedConstraints(): List<ExposerConstraint<Any?>>
+
+    /**
+     * You Should Always Implement The Constraints But You Can Provide The UseCase that can Execute The Request
+     * With / Without Constraints Validation
+     */
+    fun isConstraintsSupported(): Boolean
+
 }
 
 interface ExposerUseCaseParamImpl<Result, in Param> : ExposerBaseUseCase {
 
     fun execute(param: Param): ExposerResult<Result>
 
+    /**
+     * This Method Should Execute When You Create The UseCase to Build And Check The Constraints Validation
+     */
     fun build(param: Param): ExposerResult<Result>
 
 }
