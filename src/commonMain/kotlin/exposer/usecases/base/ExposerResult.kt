@@ -9,7 +9,12 @@ package exposer.usecases.base
 
 sealed class ExposerResult<Result> {
 
-    class ExposerSuccessResult<Result> : ExposerResult<Result>()
-    class ExposerErrorResult<ErrorType> : ExposerResult<ErrorType>()
+    class ExposerSuccessResult<Result>(private val result: Result) : ExposerResult<Result>() {
+        fun getResultContent() = Result
+    }
+
+    class ExposerErrorResult<ErrorType>(private val error: ErrorType) : ExposerResult<ErrorType>() {
+        fun getErrors() = error
+    }
 
 }

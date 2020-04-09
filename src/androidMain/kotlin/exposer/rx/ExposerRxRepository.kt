@@ -1,6 +1,6 @@
 package exposer.rx
 
-import exposer.rx.impl.ExposerRepositoryImpl
+import exposer.local.ExposerRequestRepository
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import kotlinx.coroutines.Dispatchers
@@ -13,7 +13,7 @@ import kotlinx.coroutines.withContext
  * Project Name : IntelliJ IDEA
  */
 
-class ExposerRxRepository : ExposerRepositoryImpl {
+class ExposerRxRepository : ExposerRequestRepository<Disposable> {
 
     private val repository: CompositeDisposable by lazy {
         CompositeDisposable()

@@ -33,6 +33,15 @@ interface ExposerBaseUseCase {
     fun cancel()
 
     /**
+     * Cancel The UseCase At AnyTime
+     * Each UseCase Has execute Method And You Can Execute The Request From This Method
+     * And Any Execute Call Should Executes On The UseCase Job And You Can Cancel The Job Execution at AnyTime
+     *
+     * Here You Can Choose The UseCase Reason Why it's Canceled
+     */
+    fun cancelWithReason(reason: String)
+
+    /**
      * Each UseCase Has Constraints In This Method You Can Provide The Constraints
      * What is Constraint ? ::: Check The ExposerConstraint Comment
      */
@@ -44,23 +53,45 @@ interface ExposerBaseUseCase {
      */
     fun isConstraintsSupported(): Boolean
 
+    /**
+     * Each UseCase Has Validation On Params And There Are UseCases That don't Require Params
+     * To Execute The Request and This Method Should Lock The Validation When Params Not Found
+     */
+    fun isValidationEnabled(): Boolean
+
 }
 
 interface ExposerUseCaseParamImpl<Result, in Param> : ExposerBaseUseCase {
 
-    fun execute(param: Param): ExposerResult<Result>
+    /**
+     * You Can Start UseCase Execution Here
+     */
+    suspend fun execute(param: Param): ExposerResult<Result>
 
     /**
      * This Method Should Execute When You Create The UseCase to Build And Check The Constraints Validation
      */
     fun build(param: Param): ExposerResult<Result>
 
+    /**
+     * Here You Can Get The Result From Callback When Execute The UseCase
+     * And You Should Implement The Execute Method With try , Catch To Handle
+     * The In Coming Exceptions
+     */
+    fun executeWithCallback(callback: ExposerUseCaseCallback<Result>)
+
 }
 
 interface ExposerUseCaseResultImpl<Result> : ExposerBaseUseCase {
 
+    /**
+     * You Can Start UseCase Execution Here
+     */
     fun execute(): ExposerResult<Result>
 
+    /**
+     * This Method Should Execute When You Create The UseCase to Build And Check The Constraints Validation
+     */
     fun build(): ExposerResult<Result>
 
 }

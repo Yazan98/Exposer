@@ -9,8 +9,8 @@ package exposer.usecases.constraints
 
 interface ExposerConstraintsListener {
 
-    fun onSuccessConstraints(items: List<ExposerConstraint>)
+    fun onSuccessConstraints(items: List<ExposerConstraint<*>>)
 
-    fun onFailedConstraints(items: List<ExposerConstraint>)
+    fun onFailedConstraints(items: List<ExposerConstraint<*>>)
 
 }
