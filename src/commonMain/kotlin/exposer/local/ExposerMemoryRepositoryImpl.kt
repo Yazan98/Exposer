@@ -7,8 +7,18 @@ package exposer.local
  * Project Name : IntelliJ IDEA
  */
 
-interface ExposerMemoryRepository<Type: Any> {
+interface ExposerMemoryRepositoryImpl<Type: Any> {
 
-    
+    fun add(key: String, value: Type)
+
+    fun addAll(items: HashMap<String, Type>)
+
+    fun withListener(listener: ExposerMemoryListener<Type>)
+
+    fun destroyListener()
+
+    fun getByKey(key: String): Type
+
+    fun execute()
 
 }

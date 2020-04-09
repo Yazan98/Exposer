@@ -6,5 +6,4 @@ package exposer
  * Time : 12:21 AM
  * Project Name : IntelliJ IDEA
  */
-class ExposerType {
-}
+class ExposerType: Any()

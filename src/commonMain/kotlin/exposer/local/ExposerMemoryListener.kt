@@ -6,5 +6,9 @@ package exposer.local
  * Time : 12:43 AM
  * Project Name : IntelliJ IDEA
  */
-interface ExposerMemoryListener {
+
+interface ExposerMemoryListener<Type: Any> {
+
+    fun acceptMemoryKeys(items: HashMap<String, Type>)
+
 }
