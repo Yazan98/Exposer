@@ -14,7 +14,7 @@ abstract class ExposerMemoryRepository<Type: Any>: ExposerMemoryRepositoryImpl<T
     }
 
     override fun add(key: String, value: Type) {
-        this.keys.put(key, value)
+        this.keys[key] = value
     }
 
     override fun addAll(items: HashMap<String, Type>) {

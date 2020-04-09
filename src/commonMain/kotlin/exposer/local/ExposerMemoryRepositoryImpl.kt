@@ -19,6 +19,8 @@ interface ExposerMemoryRepositoryImpl<Type: Any> {
 
     fun getByKey(key: String): Type
 
+    fun save(key: String, value: Any)
+
     fun execute()
 
 }

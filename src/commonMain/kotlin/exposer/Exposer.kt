@@ -6,4 +6,7 @@ package exposer
  * Time : 11:48 PM
  * Project Name : IntelliJ IDEA
  */
-    
+
+object Exposer {
+
+}
